@@ -24,7 +24,7 @@ class LTexture
   end
 
   def free
-    unless @texture
+    if @texture
       LibSDL.destroy_texture(@texture)
       @texture = Pointer(LibSDL::Texture).null
       @width = 0
